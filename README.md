@@ -207,13 +207,9 @@ npm test
 npm run build
 ```
 
-## 🤝 Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## 🔒 Security
 
-If you discover any security related issues, please email security@codemystify.com instead of using the issue tracker.
+If you discover any security related issues, please email codestify@gmail.com instead of using the issue tracker.
 
 ## 📄 License
 
@@ -224,8 +220,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 -   [Muhammad Ali Shah](https://github.com/codemystify)
 -   [All Contributors](../../contributors)
 
-Guardian relies on several open-source packages:
+Guardian relies on these open-source packages:
 
--   [Crawler-Detect](https://github.com/JayBizzle/Crawler-Detect)
 -   [Device Detector](https://github.com/matomo-org/device-detector)
 -   [IP-Lib](https://github.com/mlocati/ip-lib)
