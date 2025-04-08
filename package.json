@@ -1,0 +1,54 @@
+{
+    "name": "@codemystify/guardian",
+    "version": "1.0.0",
+    "description": "AI crawler detection module for Laravel applications",
+    "type": "module",
+    "main": "dist/js/guardian.js",
+    "module": "dist/js/guardian.esm.js",
+    "types": "dist/js/guardian.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "npm run build:js && npm run build:copy",
+        "build:js": "rollup -c",
+        "build:copy": "node scripts/copy-assets.js",
+        "dev": "rollup -c -w",
+        "test": "jest",
+        "clean": "rimraf dist",
+        "prebuild": "npm run clean",
+        "prepare": "npm run build",
+        "build:all": "node build.js"
+    },
+    "keywords": [
+        "bot-detection",
+        "crawler-detection",
+        "security",
+        "ai-detection",
+        "laravel"
+    ],
+    "author": "CodeMystify",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.24.0",
+        "@babel/preset-env": "^7.24.0",
+        "@babel/preset-typescript": "^7.23.3",
+        "@rollup/plugin-babel": "^6.0.4",
+        "@rollup/plugin-commonjs": "^25.0.7",
+        "@rollup/plugin-node-resolve": "^15.2.3",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/jest": "^29.5.12",
+        "fs-extra": "^11.3.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "rimraf": "^5.0.10",
+        "rollup": "^4.12.0",
+        "rollup-plugin-dts": "^6.1.0",
+        "ts-jest": "^29.1.1",
+        "typescript": "^5.3.3"
+    },
+    "optionalDependencies": {
+        "canvas": "^2.11.2"
+    }
+}

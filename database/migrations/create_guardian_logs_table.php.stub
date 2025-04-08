@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('guardian_logs', function (Blueprint $table) {
+            $table->id();
+            $table->string('ip')->index()->nullable()->index();
+            $table->text('user_agent')->nullable();
+            $table->string('path')->nullable();
+            $table->integer('score')->default(0);
+            $table->json('signals')->nullable();
+            $table->enum('detection_type', ['server', 'client'])->default('server');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('guardian_logs');
+    }
+};

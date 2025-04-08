@@ -1,0 +1,46 @@
+# Source files
+resources/
+src/
+tests/
+coverage/
+.phpunit.cache/
+
+# Build tools and configuration
+rollup.config.js
+tsconfig.json
+jest.config.js
+.babelrc
+.editorconfig
+.gitattributes
+.gitignore
+phpstan*
+phpunit*
+build.js
+install.sh
+
+# Editor directories and files
+.idea/
+.vscode/
+.cursor/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Development examples
+examples/
+
+# PHP-specific files
+composer.json
+composer.lock
+vendor/
+*.php
+routes/
+config/
+database/
+build/
+
+# Logs and local files
+*.log
+.DS_Store
+Thumbs.db

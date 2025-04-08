@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian - Basic Usage Example</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2563eb;
+        }
+        pre {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guardian - AI Crawler Detection</h1>
+
+    <div class="card">
+        <h2>About Guardian</h2>
+        <p>
+            Guardian is a client-side AI crawler detection module that helps identify and monitor potential automated
+            or AI-driven visitors on your website. It uses various detection techniques to identify non-human
+            traffic patterns.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Basic Integration</h2>
+        <p>Simple integration with default configuration:</p>
+        <pre><code>&lt;script src="../dist/guardian.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    // Guardian will auto-initialize on DOMContentLoaded
+    // No additional code needed for basic protection
+&lt;/script&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>Advanced Configuration</h2>
+        <p>Guardian with custom configuration:</p>
+        <pre><code>&lt;script src="../dist/guardian.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create a new instance with custom configuration
+        const guardian = new Guardian({
+            endpoint: '/api/report-bot',
+            sampleRate: 1.0, // Run on 100% of page views
+            threshold: 15,
+            debug: true // Enable debugging
+        });
+
+        // Initialize detection
+        guardian.init();
+    });
+&lt;/script&gt;</code></pre>
+    </div>
+
+    <div class="card">
+        <h2>Live Demo</h2>
+        <p>This page is running Guardian with debug mode enabled. Check the console for detection events.</p>
+
+        <button id="check-results">View Current Detection Results</button>
+        <div id="results" class="results">No results yet</div>
+    </div>
+
+    <!-- Load Guardian with debugging enabled -->
+    <script src="../dist/guardian.js"></script>
+    <script>
+        // Initialize Guardian with debug mode
+        const guardian = new Guardian({
+            sampleRate: 1.0, // Always run detection
+            threshold: 5,    // Lower threshold for demo purposes
+            debug: true      // Enable debug logging
+        });
+
+        // Initialize
+        guardian.init();
+
+        // Add a custom signal for demo purposes
+        guardian.addCustomSignal(
+            "demo_signal",
+            3,
+            "This is a demo signal added manually"
+        );
+
+        // Setup the button to display results
+        document.getElementById('check-results').addEventListener('click', function() {
+            const results = guardian.getResults();
+            document.getElementById('results').textContent =
+                JSON.stringify(results, null, 2);
+        });
+    </script>
+</body>
+</html>
