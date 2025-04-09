@@ -1,3 +1,7 @@
+## ⚠️ Alpha Version Notice:
+
+Please be aware that Guardian is currently in an Alpha stage and is under active development. Features, APIs, and stability may change significantly before a stable release. Use with caution, especially in production environments.
+
 # Guardian - AI & Bot Detection for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/codemystify/guardian.svg?style=flat-square)](https://packagist.org/packages/codemystify/guardian)
